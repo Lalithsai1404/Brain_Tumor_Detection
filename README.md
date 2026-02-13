@@ -1,64 +1,74 @@
-🧠 Brain Tumor Detection using Deep Learning
-Python
-TensorFlow
-OpenCV
-License
-Status
+# 🧠 Brain Tumor Detection using Deep Learning
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)  
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)  
+![OpenCV](https://img.shields.io/badge/OpenCV-Enabled-green)  
+![Kaggle Dataset](https://img.shields.io/badge/Dataset-Kaggle-blue)  
+![License](https://img.shields.io/badge/License-MIT-yellow)  
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-📘 Overview
-This project is a Deep Learning-based Brain Tumor Detection System that classifies MRI brain scans into four categories:
+---
 
-🧬 Glioma Tumor
+## 📘 Overview
 
-🧠 Meningioma Tumor
+This project is a **Deep Learning-based Brain Tumor Detection System** that classifies MRI brain scans into four categories:
 
-🚫 No Tumor
+- 🧬 **Glioma Tumor**  
+- 🧠 **Meningioma Tumor**  
+- 🚫 **No Tumor**  
+- 🩺 **Pituitary Tumor**  
 
-🩺 Pituitary Tumor
+The model uses **Transfer Learning (MobileNetV2)** from TensorFlow Keras to achieve high accuracy and efficient performance, even on limited datasets.
 
-The model uses Transfer Learning (MobileNetV2) from TensorFlow Keras to achieve high accuracy and efficient performance, even on limited datasets.
+---
 
-📂 Project Structure
+## 📂 Project Structure
+
+```text
 Brain_Tumor_Detection/
-│
 ├── data/
-│ ├── Training/
-│ │ ├── glioma_tumor/
-│ │ ├── meningioma_tumor/
-│ │ ├── no_tumor/
-│ │ └── pituitary_tumor/
-│ └── Testing/
-│ ├── glioma_tumor/
-│ ├── meningioma_tumor/
-│ ├── no_tumor/
-│ └── pituitary_tumor/
-│
+│   ├── Training/
+│   │   ├── glioma_tumor/
+│   │   ├── meningioma_tumor/
+│   │   ├── no_tumor/
+│   │   └── pituitary_tumor/
+│   └── Testing/
+│       ├── glioma_tumor/
+│       ├── meningioma_tumor/
+│       ├── no_tumor/
+│       └── pituitary_tumor/
 ├── model/
-│ └── brain_tumor_model.h5
-│
+│   └── brain_tumor_model.h5
 ├── train.py
 ├── predict.py
 └── README.md
-
 ⚙️ Installation
 Clone the repository
+
+bash
+Copy code
 git clone https://github.com/<your-username>/Brain_Tumor_Detection.git
 cd Brain_Tumor_Detection
-
 Install dependencies
+
+bash
+Copy code
 pip install -r requirements.txt
-
 or manually:
-pip install tensorflow opencv-python matplotlib numpy
 
+bash
+Copy code
+pip install tensorflow opencv-python matplotlib numpy
 Dataset Setup
-Place your MRI dataset inside the data/ directory in the same structure shown above.
+Download the Brain Tumor MRI Dataset from Kaggle:
+Kaggle Dataset Link
+
+Place the dataset inside the data/ directory in the same structure shown above.
 
 🚀 Usage
 🧩 Train the Model
-Train your model from scratch using:
+bash
+Copy code
 python train.py
-
 This will:
 
 Load and augment the dataset
@@ -68,13 +78,15 @@ Train MobileNetV2 for classification
 Save the best model as model/brain_tumor_model.h5
 
 🔍 Run Predictions
-Run the trained model on a single image:
+bash
+Copy code
 python predict.py data/Testing/glioma_tumor/image.jpg
-
 Sample Output:
+
+makefile
+Copy code
 Prediction: pituitary_tumor
 Confidence: 0.924
-
 🧠 Model Details
 Parameter	Value
 Base Model	MobileNetV2 (ImageNet Pretrained)
@@ -88,22 +100,28 @@ Classes	4 (glioma, meningioma, no_tumor, pituitary)
 
 📊 Training Visualization
 After training, accuracy graphs are automatically plotted using Matplotlib:
+
+python
+Copy code
 plt.plot(history.history['accuracy'], label='Train Acc')
 plt.plot(history.history['val_accuracy'], label='Val Acc')
 plt.legend()
 plt.show()
-
 🖼️ Sample Results
 MRI Scan	Model Prediction
-Glioma Tumor (Confidence: 0.92)
+Glioma Tumor	Confidence: 0.92
 
 (Replace the above image URL with your own once uploaded.)
 
 🧩 Key Features
 ✅ Transfer Learning with MobileNetV2
+
 ✅ Data Augmentation for improved generalization
+
 ✅ Real-time single image prediction
+
 ✅ Early Stopping and Model Checkpoint callbacks
+
 ✅ Lightweight and easy to deploy
 
 🛠️ Technologies Used
@@ -117,6 +135,3 @@ OpenCV for image preprocessing
 
 📜 License
 This project is licensed under the MIT License — see the LICENSE file for details.
-
-🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
